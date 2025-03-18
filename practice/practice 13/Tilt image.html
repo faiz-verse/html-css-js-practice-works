@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilt Image</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0f0f0;
+        }
+
+        .image-container {
+            perspective: 1000px; /* Adds a 3D perspective effect */
+        }
+
+        .image-container img {
+            width: 300px;
+            transition: transform 0.1s ease; /* Smooth transition */
+        }
+
+        .image-container img:hover {
+            transform: rotateX(30deg); /* Tilt backward on hover */
+        }
+
+        img{
+            clip-path: circle(50%);
+        }
+
+        .cursor-chaser{
+            width: 150px;
+            height: 20px;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 3px;
+            position: absolute;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="https://th.bing.com/th/id/OIP.5TEejgnFmxE59jWvqe-PYwHaHa?rs=1&pid=ImgDetMain" alt="Leaning Image">
+    </div>
+
+    <div class="cursor-chaser">
+    </div>
+
+    <script>
+        const img = document.querySelector('.image-container img');
+        const cursor_chaser = document.querySelector('.cursor-chaser');
+        document.addEventListener('mouseover', function(e){
+            img.style.transform =  `rotateX(${e.clientX}deg) rotateY(${e.clientY}deg)`;
+            cursor_chaser.style.top = `${e.clientY}px`;
+            cursor_chaser.style.left = `${e.clientX}px`;
+            cursor_chaser.innerHTML = `X: ${e.clientX}, Y: ${e.clientX}`;
+        });     
+    </script>
+</body>
+</html>

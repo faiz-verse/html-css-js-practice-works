@@ -1,0 +1,159 @@
+/* google font - Reenie Beanie (handwriting) */
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to top right, black, rgb(0, 0, 78));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+#old-photo-container {
+    margin-left: -20px;
+    width: 475px;
+    height: 100vw;
+
+    background-color: rgba(255, 255, 255, 0.11);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-x: visible;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    transform: rotate(-90deg);
+
+    gap: 70px;
+    position: absolute;
+}
+
+#old-photo-scroll-hint{
+    width: 450px;
+    height: 60px;
+    text-align: center;
+    font-family: 'Reenie Beanie';
+    font-size: 70px;
+    font-weight: normal;
+    color: white;
+
+    position: absolute;
+    top: 2.5%;
+}
+
+.old-photo-frame {
+    min-width: 275px;
+    min-height: 350px;
+    width: 275px;
+    height: 350px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2px;
+
+    user-select: none;
+    
+    transform: rotate(90deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(1) {
+    margin-top: 75px;
+    transform: rotate(100deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(2) {
+    transform: rotate(80deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(3) {
+    transform: rotate(95deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(4) {
+    transform: rotate(65deg);
+
+}
+
+#old-photo-container .old-photo-frame:nth-child(5) {
+    margin-left: 50px;
+    transform: rotate(80deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(6) {
+    transform: rotate(100deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(7) {
+    transform: rotate(75deg);
+}
+
+#old-photo-container .old-photo-frame:nth-child(8) {
+    margin-bottom: 75px;
+    transform: rotate(92deg);
+
+}
+
+.old-photo-frame:hover {
+    scale: 1.05;
+    transition: scale 0.3s ease;
+}
+
+.old-photo {
+    width: 90%;
+    height: 77.5%;
+    background-color: black;
+}
+
+.photo-info {
+    width: 90%;
+    height: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Reenie Beanie';
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.scroll-button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 0px 20px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: x-large;
+    font-weight: bolder;
+
+    position: fixed;
+    transition: all 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.scroll-button:active{
+    scale: 0.95;
+}
+
+#scroll-left{
+    left: 50px;
+}
+
+#scroll-right{
+    right: 50px;
+}

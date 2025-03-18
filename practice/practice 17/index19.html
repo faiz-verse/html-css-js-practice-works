@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index 19 | FK loader</title>
+    <style>
+        :root {
+            --loader-width: 70px;
+            --loader-height: 70px;
+        }
+
+        body {
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(to top right, blue, black);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .loader-Main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .fk-loader {
+            width: var(--loader-width);
+            height: var(--loader-height);
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .fk-loader svg {
+            border-radius: 50%;
+            overflow: visible;
+        }
+
+        /* Animation for each part */
+        #FK-Logo #Middle {
+            transform: translateY(-100%);
+            animation: moveMiddle 3.5s ease-in-out infinite;
+        }
+
+        #FK-Logo #F-Down {
+            transform: translateX(100%);
+            animation: moveFDown 3.5s ease-in-out infinite;
+        }
+
+        #FK-Logo #F-Up {
+            transform: translateX(100%);
+            animation: moveFUp 3.5s ease-in-out infinite;
+        }
+
+        #FK-Logo #K-Up {
+            transform: translate(-100%, -100%);
+            animation: moveKUp 3.5s ease-in-out infinite;
+        }
+
+        #FK-Logo #K-Down {
+            transform: translate(-100%, 100%);
+            animation: moveKDown 3.5s ease-in-out infinite;
+        }
+
+        /* Keyframes for animations */
+        @keyframes moveMiddle {
+            0% {
+                transform: translateY(-100%);
+            }
+
+            10% {
+                transform: none;
+            }
+
+            50% {
+                transform: none;
+            }
+
+            60% {
+                transform: none;
+            }
+
+            70%,
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        @keyframes moveFUp {
+
+            0%,
+            10% {
+                transform: translateX(100%);
+            }
+
+            20% {
+                transform: none;
+            }
+
+            50% {
+                transform: none;
+            }
+
+            60% {
+                transform: none;
+            }
+
+            70%,
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveFDown {
+
+            0%,
+            15% {
+                transform: translateX(100%);
+            }
+
+            25% {
+                transform: none;
+            }
+
+            50% {
+                transform: none;
+            }
+
+            60% {
+                transform: none;
+            }
+
+            75%,
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        @keyframes moveKUp {
+
+            0%,
+            20% {
+                transform: translate(-100%, -100%);
+            }
+
+            30% {
+                transform: none;
+            }
+
+            50% {
+                transform: none;
+            }
+
+            60% {
+                transform: none;
+            }
+
+            80%,
+            100% {
+                transform: translate(100%, 100%);
+            }
+        }
+
+        @keyframes moveKDown {
+
+            0%,
+            25% {
+                transform: translate(-100%, 100%);
+            }
+
+            35% {
+                transform: none;
+            }
+
+            50% {
+                transform: none;
+            }
+
+            60% {
+                transform: none;
+            }
+
+            85%,
+            100% {
+                transform: translate(100%, -100%);
+            }
+        }
+
+        .loader-Main .loader {
+            position: absolute;
+            width: calc(var(--loader-width) + 5px);
+            height: calc(var(--loader-height) + 5px);
+            top: -4.5px;
+            left: -4.5px;
+        }
+
+        .loader-Main .loader::before {
+            content: '';
+            width: calc(var(--loader-width) + 5px);
+            height: calc(var(--loader-height) + 5px);
+            border: 2px solid white;
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: loader-1 2.5s linear infinite;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        .loader-Main .loader::after {
+            content: '';
+            width: calc(var(--loader-width) + 0px);
+            height: calc(var(--loader-height) + 0px);
+            border: 1px solid transparent;
+            border-top-color: white;
+            border-radius: 50%;
+            animation: loader-1 1.5s linear reverse infinite;
+            position: absolute;
+            top: 3.5px;
+            left: 3.5px;
+        }
+
+        @keyframes loader-1 {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-Main">
+        <div class="loader"></div>
+
+        <div class="fk-loader">
+            <svg width="60" height="60" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="FK-Logo">
+                    <path id="Middle" d="M144.272 67.6758L174.272 96.9861V237.676H144.272V67.6758Z" fill="gold" />
+                    <path id="F-Down" d="M174.272 167.676V137.676H254.272V167.676H174.272Z" fill="gold" />
+                    <path id="F-Up" d="M174.272 97.6758L144.272 67.6758H274.272V97.6758L174.272 97.6758Z"
+                        fill="gold" />
+                    <path id="K-Up" d="M25.2664 67.6638L71.8644 68.143L144.407 129.176L144.407 168.176L25.2664 67.6638Z"
+                        fill="gold" />
+                    <path id="K-Down"
+                        d="M25.2721 237.481L62.2721 236.676L122.918 149.798L100.541 131.014L25.2721 237.481Z"
+                        fill="gold" />
+                </g>
+            </svg>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

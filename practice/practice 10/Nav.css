@@ -1,0 +1,235 @@
+/* for importing flat-icons */
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    /* background-image: url('/Animation - 1735290426314.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    /* background: linear-gradient(to top right, darkblue, #000055, black, black);
+    background-size: 400% 400%; /* Creates room for smooth gradient movement */
+    /* animation: changeGradient 5s ease infinite; */
+}
+
+/* for gradient animation */
+/* @keyframes changeGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+} */
+
+/* For Video Background */
+video{
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+    z-index: -10;
+}
+
+/* ---------------------------------------- NAVIGATION BAR ---------------------------------------- */
+nav{
+    width: 30%;
+    height: 65px;
+    background-color: rgba(255, 255, 255, 0.400);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 5%;
+    left: 35%;
+}
+/* LOGO */
+#logo-img{
+    width: 40px;
+    height: 40px;
+    background-image: url('/FK logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* OPTIONS */
+/* #home, #info, #projects, #games, #contact */
+.options{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease-in;
+}
+/* FOR THEIR PSEUDO ELEMENTS */
+#home::after, #info::after, #projects::after, #games::after, #contact::after{
+    width: 50px;
+    height: 15px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: transparent;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    transition: all 0.3s ease-in;
+}
+#home::after{
+    content: "Home";
+    left: 15%;
+}
+#info::after{
+    content: "Info";
+    left: 27.5%;
+}
+#projects::after{
+    content: "Projects";
+    left: 6%;
+}
+#games::after{
+    content: "Games";
+    left: 15%;
+}
+#contact::after{
+    content: "Contact";
+    left: 10%;
+}
+/* .options:hover*/
+#home:hover, #info:hover, #projects:hover, #games:hover, #contact:hover{
+    border-radius: 20px;
+    background-color: gold;
+    transform: translateY(-5px) scale(0.85);
+}
+#home:hover::after, #info:hover::after, #projects:hover::after, #games:hover::after, #contact:hover::after{
+    opacity: 1;
+}
+.options .nav-icon{
+    font-size: 30px;
+    color: white;
+    transition: all 0.3s ease-in;
+}
+.options:hover .nav-icon{
+    color: black;
+}
+/* .options:active */
+#home:active, #info:active, #projects:active, #games:active, #contact:active{
+    border-radius: 20px;
+    background-color: gold;
+    transform: translateY(-5px) scale(0.85);
+}
+#home:active::after, #info:active::after, #projects:active::after, #games:active::after, #contact:active::after{
+    opacity: 1;
+}
+.options .nav-icon{
+    font-size: 30px;
+    color: white;
+    transition: all 0.3s ease-in;
+}
+.options:active .nav-icon{
+    color: black;
+}
+
+/* For Responsitivity */
+@media screen and (max-width: 1200px){
+    nav{
+        width: 40%;
+        left: 30%;
+    }
+}
+@media screen and (max-width: 1000px){
+    nav{
+        width: 45%;
+        left: 27.5%;
+    }
+    #logo-img{
+        width: 45px;
+        height: 45px;
+    }
+    .options{
+        width: 45px;
+        height: 45px;
+    }
+    .options .nav-icon{
+        font-size: 28px;
+    }
+}
+@media screen and (max-width: 900px){
+    nav{
+        width: 50%;
+        left: 25%;
+    }
+    #logo-img{
+        width: 40px;
+        height: 40px;
+    }
+    .options{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media screen and (max-width: 800px){
+    nav{
+        width: 55%;
+        left: 22.5%;
+    }
+    #logo-img{
+        width: 35px;
+        height: 35px;
+    }
+    .options{
+        width: 35px;
+        height: 35px;
+    }
+}
+@media screen and (max-width: 700px){
+    nav{
+        width: 60%;
+        left: 20%;
+        top: 4%;
+    }
+    #logo-img{
+        width: 35px;
+        height: 35px;
+    }
+    .options{
+        width: 35px;
+        height: 35px;
+    }
+    
+    .options .nav-icon{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 500px){
+    nav{
+        width: 70%;
+        left: 15%;
+        top: 3%;
+    }
+    #logo-img{
+        width: 30px;
+        height: 30px;
+    }
+    .options{
+        width: 30px;
+        height: 30px;
+    }
+    .options .nav-icon{
+        font-size: 20px;
+    }
+}

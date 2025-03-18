@@ -1,0 +1,208 @@
+/* google font - Reenie Beanie (handwriting) */
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to top right, black, rgb(0, 0, 78));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+#reveal-photo-wrapper {
+    width: 1100px;
+    height: 600px;
+    /* border: 2px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#reveal-photo-container {
+    width: 95%;
+    height: 95%;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#reveal-photo-bucket {
+    width: 80%;
+    height: 95%;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#reveal-photo-stack {
+    width: 95%;
+    height: 95%;
+    /* border: 2px solid green; */
+}
+
+.reveal-photo-frame {
+    min-width: 275px;
+    min-height: 350px;
+    width: 275px;
+    height: 350px;
+
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 2px;
+
+    box-shadow: 0px 0px 10px black;
+
+    cursor: grab;
+
+    position: absolute;
+    top: 15%;
+    left: 140%;
+
+    transition: scale 0.03s ease-in-out;
+    transition: top 0.05s ease, left 0.05s ease;
+
+    user-select: none;
+}
+
+.reveal-photo-frame:nth-child(1) {
+    z-index: 8;
+    transform: rotate(10deg);
+}
+
+.reveal-photo-frame:nth-child(2) {
+    z-index: 7;
+    transform: rotate(8deg);
+}
+
+.reveal-photo-frame:nth-child(3) {
+    z-index: 6;
+    transform: rotate(-15deg);
+}
+
+.reveal-photo-frame:nth-child(4) {
+    z-index: 5;
+    transform: rotate(5deg);
+
+}
+
+.reveal-photo-frame:nth-child(5) {
+    z-index: 4;
+    transform: rotate(0deg);
+}
+
+.reveal-photo-frame:nth-child(6) {
+    z-index: 3;
+    transform: rotate(20deg);
+}
+
+.reveal-photo-frame:nth-child(7) {
+    z-index: 2;
+    transform: rotate(-35deg);
+}
+
+.reveal-photo-frame:nth-child(8) {
+    z-index: 1;
+    transform: rotate(22deg);
+
+}
+
+.reveal-photo {
+    width: 90%;
+    height: 77.5%;
+    background-color: black;
+}
+
+.reveal-photo-info {
+    width: 90%;
+    height: 15%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Reenie Beanie';
+    font-size: 40px;
+    font-weight: 500;
+}
+
+#bucket {
+    transform-origin: center;
+    animation: bucketShake 0.3s linear infinite;
+    animation: none; /* Initially disabled */
+}
+
+#bucket #back {
+    z-index: -2;
+}
+
+#bucket #Front,
+#bucket #Note,
+#bucket #Text {
+    position: absolute;
+    z-index: 15;
+}
+
+@keyframes bucketShake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+#unsee-button {
+    height: 50px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid lightblue;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 0%;
+
+    user-select: none;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+    transition: all 0.2s ease-in;
+}
+
+#unsee-button:hover {
+    color: black;
+    background: lightblue;
+    box-shadow: 0px 0px 15px lightblue;
+}
+
+#unsee-button:active {
+    scale: 0.95;
+}

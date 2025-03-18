@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Page</title>
+    <link rel="stylesheet" href="AuthPage.css">
+</head>
+
+<body>
+
+    <div id="containerAll">
+        <div id="mainContainer">
+
+            <div id="signInContainer">
+                <h1  class="formHeading">Sign In form</h1>
+                <form id="signInForm" action="">
+                    <span class="formText">Email</span>
+                    <input type="email" placeholder="enter your email">
+                    <span class="formText">Password</span>
+                    <input type="password" placeholder="enter your password">
+                    <span class="infoText">don't have an account yet? <h5 id="signUpButton">Sign Up</h5></span>
+                    <input class="formButton" type="submit" value="Sign In">
+                </form>
+            </div>
+            <div id="signUpContainer">
+                <h1 class="formHeading">Sign Up form</h1>
+                <form id="signUpForm" action="">
+                    <span class="formText">Email</span>
+                    <input type="email" placeholder="enter your email">
+                    <span class="formText">Password</span>
+                    <input type="password" placeholder="enter your password">
+                    <span class="infoText">already have an account? <h5 id="signInButton">Sign In</h5></span>
+                    <input class="formButton" type="submit" value="Sign Up">
+                </form>
+            </div>
+            <div id="coverContainer">
+                <div id="signInInfo">
+                    <img class="signInUpImage" src="/Sign in-bro.png" alt="image">
+                </div>
+                <div id="signUpInfo">
+                    <img class="signInUpImage" src="/Sign up-bro.png" alt="image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="AuthPage.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #e0f7fa, #81d4fa);
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+    background: white;
+    border: 2px solid #00796b;
+    overflow: hidden;
+}

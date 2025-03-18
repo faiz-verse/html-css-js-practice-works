@@ -1,0 +1,154 @@
+body{
+    width: 100%;
+    height: 250vh;
+
+    /* overflow: hidden; */
+
+    background: linear-gradient(to left, black, black, gray, white);
+
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+
+    scroll-behavior: smooth;
+}
+
+.circularSlider{
+    width: 800px;
+    height: 800px;
+
+    position: fixed;
+    top: 0%;
+    left: -30%;
+
+    /* border: 3px dotted white; */
+    border-radius: 50%;
+    background: transparent;
+
+    display: flex;
+    justify-content: space-evenly;
+
+    /* transform: rotate(50deg); */
+
+    animation: rotateSlider 5s linear;
+    animation-timeline: view();
+}
+
+@keyframes rotateSlider{
+    from{
+        transform: rotate(-40deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.image1{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: -12.5%;  
+}
+
+.image2{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: 16.5%;
+    left: -10.5%;
+}
+
+.image3{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: 65%;
+    left: -2%; 
+}
+
+.image4{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: 84.5%;
+    left: 40%; 
+}
+
+.image5{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: 12.5%;
+    right: -7.5%;
+}
+
+.image6{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid white;
+    position: absolute;
+    top: 60%;
+    right: -9%; 
+}
+
+.slideInfo{
+    width: 55%;
+    height: 100%;
+    position: relative;
+    left: 40%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+}
+
+.info{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding: 50px 0 50px 0;
+    color: white;
+    animation: autoShow ease-in;
+    animation-timeline: view();
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    color:transparent;
+    -webkit-text-stroke: 2px white;
+}
+
+
+@keyframes autoShow {
+    0%{
+        opacity: 0;
+        transform: translateY(100px) scale(0.5);
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0px) scale(1.1);
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(100px) scale(0.5);
+    }
+    
+}

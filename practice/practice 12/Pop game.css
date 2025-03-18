@@ -1,0 +1,149 @@
+*{
+    font-family: monospace;
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to right, black, black, white);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-game{
+    padding: 30px;
+    width: 400px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.250);
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin-top: 0;
+    font-weight: 600;
+}
+
+.container-game h1{
+    color: white;
+}
+
+.fall-area{
+    width: 97.5%;
+    height: 450px;
+    background-color: black;
+    border-radius: 10px;
+    border: 3px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.falling-items{
+    width: 45px;
+    height: 45px;
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    transform: translateY(-100px);
+    transition: all 3s ease;
+
+    user-select: none;
+}
+
+@keyframes rotate-self{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.container-score{
+    padding: 30px;
+    width: 400px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.250);
+    border-radius: 10px;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.score{
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    height: 400px;
+    background-color: black;
+    border-radius: 10px;
+    border: 3px solid white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+span{
+    font-size: 30px;
+    color: white;
+}
+
+b{
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.container-buttons{
+    margin: 20px 0 20px 0;
+    width: 97.5%;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+}
+
+.start{
+    width: 45%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: 700;
+    background: rgb(0, 255, 0);
+    box-shadow: 5px -5px 20px rgb(0, 255, 0);
+    border: solid darkgreen;
+    border-width: 0px 0px 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5 ease;
+}
+
+
+.reset{
+    width: 45%;
+    height: 100%;
+    font-size: 25px;
+    background: rgb(255, 0, 0);
+    box-shadow: 5px -5px 20px rgb(255, 0, 0);
+    border: solid darkred;
+    border-width: 0px 0px 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5 ease;
+}
+

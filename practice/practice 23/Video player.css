@@ -1,0 +1,174 @@
+:root{
+    --video-wrapper-height: 300px;
+    --video-wrapper-width: 600px;
+    --video-container-height: 75px;
+    --video-container-width: 75px;
+
+    --after-before-opacity: 1;
+    --after-before-height-width: 75px;
+    --animation-play-state: "running";
+    --before-animation-duration: 7s;
+    --after-animation-duration: 4s;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to top right, black, rgb(0, 0, 78));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    user-select: none;
+}
+
+#video-player-wrapper{
+    margin-top: 50%;
+    margin-bottom: 50%;
+    width: var(--video-wrapper-width);
+    height: var(--video-wrapper-height);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+video{
+    height: 300px;
+    width: 600px;
+    opacity: 0.3;
+    transition: opacity 0.7s ease-in;
+    border-radius: 20px;
+}
+
+#video-player-container{
+    width: var(--video-container-width);
+    height: var(--video-container-height);
+    background-color: white;
+    box-shadow: 0 0 10px gray;
+    border-radius: 50%;
+    overflow: hidden;
+
+    position: absolute;
+    z-index: 10;  
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+
+    transition: all 0.7s ease-in;
+}
+
+@keyframes changeshape {
+    0%{
+        transform: rotate(0deg);
+        border-radius: 50%;
+    }
+    50%{
+        transform: rotate(180deg);
+        border-radius: 10%;
+    }
+    100%{
+        transform: rotate(360deg);
+        border-radius: 50%;
+    }
+}
+
+#video-player-wrapper::after{
+    content: '';
+    width: var(--after-before-height-width);
+    height: var(--after-before-height-width);
+    background-color: rgba(255, 255, 255, 0.767);
+    box-shadow: 0 0 10px darkgray;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 9;
+
+    opacity: var(--after-before-opacity);
+
+    transition: all 0.7s ease-in;
+
+    animation: changeshape var(--after-animation-duration) linear infinite;
+    animation-play-state: var(--animation-play-state);
+}
+
+#video-player-wrapper::before{
+    content: '';
+    width: var(--after-before-height-width);
+    height: var(--after-before-height-width);
+    background-color: rgba(255, 255, 255, 0.384);
+    box-shadow: 0 0 10px darkgray;
+    border-radius: 20%;
+    position: absolute;
+    z-index: 8;
+
+    opacity: var(--after-before-opacity);
+
+    transition: all 0.7s ease-in;
+
+    animation: changeshape var(--before-animation-duration) linear reverse infinite;
+    animation-play-state: var(--animation-play-state);
+}
+
+#video-player-icon{
+    height: 45px;
+    width: 45px;
+
+    position: absolute;
+
+    z-index: 5;
+
+    transform: translateX(3.5px);
+    opacity: 1;
+
+    transition: all 0.5s ease-in;
+}
+
+/* for video line */
+#video-controls {
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+#video-progress {
+    width: 80%;
+    height: 5px;
+    appearance: none;
+    background: linear-gradient(to right, red 0%, red 0%, #ddd 0%, #ddd 100%);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.1s; /* Smooth transition */
+}
+
+#video-progress::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+}
+
+/* For Firefox */
+#video-progress::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#video-progress::-webkit-slider-thumb:hover{
+    scale: 1.3;
+}

@@ -1,0 +1,253 @@
+body{
+    width: 99%;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right top,cyan, magenta);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    margin-top: -50px;
+    position: relative;
+    margin-bottom: -150px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 200px;
+    font-weight: 750;
+    color: white;
+    /* z-index: 1; */
+}
+
+h1::after{
+    content: "RESPONSIVE GRID";
+    position: absolute;
+    inset: 0 0 0 0;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke: 2px white;
+    font-size: 200px;
+    font-weight: 750;
+    color: transparent;
+    z-index: 3;
+}
+
+.containerMain{
+    width: 80%;
+    height: 80%;
+    background: rgba(255, 255, 255, 0.37);
+    border-radius: 10px;
+    padding: 15px;
+
+    display: grid;
+    gap: 15px;
+    grid-template-rows: 1, 1fr;
+    grid-template-columns: repeat(4, 1fr);
+
+    /* position: absolute; */
+
+    z-index: 1;
+}
+
+.itemName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 33px;
+    font-weight: 800;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 10px 0 10px;
+}
+
+.itemFeatures{
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.features{
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.075);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.itemInfo{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    padding: 15px 10px 0 10px;
+    justify-content: top;
+}
+
+@media screen and (max-width: 1900px){
+    h1{
+        margin-bottom: -120px;
+        font-size: 150px;
+    }
+    h1::after{
+        font-size: 150px;
+    }
+}
+
+@media screen and (max-width: 1500px){
+    h1{
+        margin-bottom: -100px;
+        font-size: 120px;
+    }
+    h1::after{
+        font-size: 120px;
+    }
+}
+
+@media screen and (max-width: 1155px){
+    h1{
+        margin-bottom: -80px;
+        font-size: 100px;
+    }
+    h1::after{
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 950px){
+    h1{
+        margin-bottom: -70px;
+        font-size: 80px;
+    }
+    h1::after{
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 470px){
+    h1{
+        margin-bottom: -20px;
+        font-size: 20px;
+        text-align: center;
+    }
+    h1::after{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .containerMain{
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* For tablets */
+    .itemName{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0 10px 0 10px;
+    }
+    
+    .itemFeatures{
+        margin-top: 10px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .features{
+        display: flex;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.075);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    
+    .itemInfo{
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        padding: 15px 10px 0 10px;
+        justify-content: top;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    h1{
+        margin-bottom: -50px;
+        font-size: 50px;
+    }
+    h1::after{
+        font-size: 50px;
+    }
+
+    .containerMain{
+        overflow: scroll;
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        grid-template-rows: repeat(4, 60%);
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* For Mobiles */
+    .itemName{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-size: 25px;
+        font-weight: 700;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 0 10px 0 10px;
+    }
+    
+    .itemFeatures{
+        margin-top: 10px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .features{
+        display: flex;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.075);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        border-radius: 10px;
+    }
+    
+    .itemInfo{
+        display: flex;
+        flex-direction: column;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        padding: 15px 10px 0 10px;
+        justify-content: top;
+    }
+}
+
+.items{
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 60% 10% 5% 25%;
+}
+
+.itemImg{
+    border-radius: 10px 10px 0px 0px;
+}

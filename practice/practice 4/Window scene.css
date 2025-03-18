@@ -1,0 +1,445 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.main{
+
+    height: 500px;
+    width: 400px;
+    background: linear-gradient(to bottom, darkred,red,orange,yellow,lightyellow); /* Horizontal gradient from red to yellow */
+
+    /* box-shadow:0px 20px 20px black,-20px -10px 50px darkred,20px -10px 30px darkred,0 -20px 30px darkred; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 20px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+@media screen and (max-width: 480px){
+    .main{
+        scale: 0.65;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    .main{
+        scale: 0.75;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px){
+    .main{
+        scale: 0.85;
+    }
+}
+
+.stars{
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: absolute;
+    z-index: 0;
+    top: 0px;
+}
+
+#star1{
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 0 50%;
+
+    animation: moving-stars 2s linear infinite;
+}
+
+#star2{
+    margin-left: 10%;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+
+    animation: moving-stars 3s linear infinite;
+}
+
+#star3{
+    margin-top: 10%;
+    margin-left: 25%;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+
+    animation: moving-stars 4s linear infinite;
+}
+
+#star4{
+    margin-top: 5%;
+    margin-left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+
+    animation: moving-stars 5s linear infinite;
+}
+
+#star5{
+    margin-top: 15%;
+    margin-left: -50%;
+    width: 6px;
+    height: 6px;
+    background-color: white;
+    border-radius: 50%;
+
+    animation: moving-stars 6s linear infinite;
+}
+
+#star6{
+    margin-top: 15%;
+    margin-left: -75%;
+    width: 7px;
+    height: 7px;
+    background-color: white;
+    border-radius: 50%;
+
+    animation: moving-stars 7s linear infinite;
+}
+
+
+
+@keyframes moving-stars{
+    from{
+        transform: translateX(100px) translateY(-180px);
+        opacity: 1;
+    } 
+    to{
+        transform: translateX(-500px) translateY(600px);
+        opacity: 0;
+    }
+}
+
+/* MOUNTAINS */
+.mountains{
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(to top, black, transparent );
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    position: absolute;
+    top: 40%;
+    z-index: 5px;
+}
+#mountain1{
+    margin-left: -100px;
+    margin-bottom: -100px;
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(to top,black,black,black,rgb(83, 18, 18));
+    opacity: 70%;
+    transform: rotate(45deg);
+}
+#mountain2{
+    margin-left: -50px;
+    margin-bottom: -100px;
+    width: 600px;
+    height: 350px;
+    background: linear-gradient(to top,black,black,black,rgb(83, 18, 18));
+    opacity: 95%;
+    transform: rotate(45deg);
+}
+#mountain3{
+    margin-left: -150px;
+    margin-bottom: -150px;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(to top,black,black,black,rgb(83, 18, 18));
+    transform: rotate(45deg);
+}
+
+.fog{
+    height: 200px;
+    width: 100%;
+    background: linear-gradient(to top,rgb(55, 55, 55) , transparent);
+    position: absolute;
+    top: 60%;
+    z-index: 10px;
+}
+
+.trees{
+    height: 200px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    position: absolute;
+    z-index: 15px;
+    top: 65%;
+
+}
+
+.trees2{
+    height: 200px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    position: absolute;
+    z-index: 15px;
+    top: 60%;
+    left: 5%;
+
+}
+
+.treeTop2{
+    height: 12%;
+    width: 40%;
+    background-color: black;
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeUpperMiddle2{
+    margin-top: -5%;
+    height: 15%;
+    width: 55%;
+    background-color: black;
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeMiddle2{
+    margin-top: -10%;
+    height: 20%;
+    width: 65%;
+    background-color: black;
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeLowerMiddle2{
+    margin-top: -15%;
+    height: 25%;
+    width: 85%;
+    background-color: black;
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeBottom2{
+    margin-top: -15%;
+    height: 30%;
+    width: 100%;
+    background-color: black;
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+
+.treeTop{
+    height: 12%;
+    width: 40%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeUpperMiddle{
+    margin-top: -5%;
+    height: 15%;
+    width: 55%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeMiddle{
+    margin-top: -10%;
+    height: 20%;
+    width: 65%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeLowerMiddle{
+    margin-top: -15%;
+    height: 25%;
+    width: 85%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+.treeBottom{
+    margin-top: -15%;
+    height: 30%;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    border-radius: 0 0 40px 0;
+    transform: rotate(45deg);
+}
+
+
+#tree1{
+    margin-bottom: -5%;
+    height: 140px;
+    width: 40px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree2{
+    margin-bottom: -5%;
+    margin-left: 10px;
+    height: 160px;
+    width: 45px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree3{
+    margin-bottom: -2%;
+    height: 100px;
+    width: 30px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree4{
+    margin-bottom: -4%;
+    height: 180px;
+    width: 45px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree5{
+    margin-bottom: -5%;
+    margin-left: 12px;
+    height: 160px;
+    width: 40px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree6{
+    margin-bottom: -5%;
+    margin-left: 5px;
+    height: 140px;
+    width: 30px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree7{
+    margin-bottom: -5%;
+    margin-left: 10px;
+    height: 200px;
+    width: 50px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree8{
+    margin-bottom: -5%;
+    margin-left: -5px;
+    height: 150px;
+    width: 35px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+#tree9{
+    margin-bottom: -5%;
+    margin-left: 10px;
+    height: 190px;
+    width: 50px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.window-1{
+    width: 100%;
+    height: 500px;
+
+    position: absolute;
+    z-index: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#window-grid-1{
+    width: 15px;
+    height: 500px;
+    background-color: black;
+}
+
+#window-grid-2{
+    width: 15px;
+    height: 500px;
+    background-color: black;
+}
+
+.window-2{
+    width: 100%;
+    height: 500px;
+
+    position: absolute;
+    z-index: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#window-grid-3{
+    width: 100%;
+    height: 15px;
+    background-color: black;
+}
+
+#window-grid-4{
+    width: 100%;
+    height: 15px;
+    background-color: black;
+}

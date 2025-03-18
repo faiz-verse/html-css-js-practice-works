@@ -1,0 +1,170 @@
+/* Ubuntu font */
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Sqaure Peg */
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+*{
+    font-family: "Ubuntu";
+}
+
+body{
+    margin: 0;
+    width: 100%;
+    height: auto;
+
+    scroll-behavior: smooth;
+
+    /* background: linear-gradient(to right top, #09295a, #006199, #0099a7, #00bf72, #a8eb12); */
+    background: linear-gradient(to top right, rgb(255, 200, 200), red);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home{
+    width: 100%;
+    height: 200vh;
+}
+.home-content{
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sections{
+    width: 100%;
+    height: 200vh;
+
+    position: absolute;
+    /* For way 1 */
+    /* transition: all 1s ease-in; */
+}
+
+.section-content{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* For using observer in js (Way 1)*/
+/* .hide{
+    opacity: 0;
+    transform: translateY(100px);
+}
+.show{
+    opacity: 1;
+    transform: translateY(0px);
+} */
+
+
+/* For using the animation timeline and view (Way 2) */
+@keyframes showTitle {
+    from{
+        transform: translateY(50px);
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+        scale: 1;
+    }
+}
+/* For using the animation timeline and view (Way 2) */
+@keyframes showInfo {
+    from{
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+h1{
+    margin: 0;
+    font-family: "Square Peg";
+    font-size: 120px;
+    font-weight: 700;
+    color: white;
+
+    /* For way 2 */
+    animation: showTitle 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 40%;
+}
+
+p{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+
+    /* For way 2 */
+    animation: showInfo 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 35%;
+}
+
+@keyframes showSection {
+    0%{
+        width: 50vh;
+        height: 50vh;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        scale: 0.2;
+    }
+    
+    100%{
+        width: 100%;
+        height: 120vh;
+        border-radius: 0%;
+        scale: 1;
+    }
+}
+
+.sections:nth-child(2){
+    top: 100vh;
+    background: linear-gradient(to right top, rgb(255, 225, 170), orange);
+    animation: showSection 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 46%;
+}
+.sections:nth-child(3){
+    top: 180vh;
+    background: linear-gradient(to right top, lightyellow, yellow, gold);
+    animation: showSection 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 46%;
+}
+.sections:nth-child(4){
+    top: 260vh;
+    background: linear-gradient(to right top, rgb(200, 255, 200), rgb(0, 255, 0));
+    animation: showSection 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 46%;
+}
+.sections:nth-child(5){
+    top: 340vh;
+    background: linear-gradient(to right top, lightblue, blue);
+    animation: showSection 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 46%;
+}
+.sections:nth-child(6){
+    top: 420vh;
+    background: linear-gradient(to right top, rgb(236, 210, 255), indigo);
+    animation: showSection 2s linear;
+    animation-timeline: view(0%);
+    animation-range: entry 0% cover 46%;
+}

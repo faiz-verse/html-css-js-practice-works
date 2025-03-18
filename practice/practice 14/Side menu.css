@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to top right, tomato, red, darkred);
+    overflow: hidden;
+}
+
+.vertical-nav{
+    width: 100vh;
+    height: 120px;
+    background-color: red;
+
+    transform: rotate(-90deg);
+    transform-origin: top right; /* Set rotation origin to the top-right corner */
+    position: absolute;
+    right: 120px; /* Align the right edge */
+}
+
+.options{
+    width: 100%;
+    height: 40px;
+    padding-left: 20px;
+
+    display: flex;
+    align-items: center;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 17px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.options:nth-child(1){
+    background-color: tomato;
+}
+
+.options:nth-child(2){
+    background-color: red;
+}
+
+.options:nth-child(3){
+    background-color: darkred;
+}
+
+.vertical-nav-title{
+    width: 100vh;
+    height: 120px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    background-color: rgba(0, 0, 0, 0.199);
+
+    transform: rotate(-90deg);
+    transform-origin: top right; /* Set rotation origin to the top-right corner */
+    position: absolute;
+    right: 240px; /* Align the right edge */
+
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: all 0.3s ease-in;
+}
+
+.vertical-nav-title span{
+    overflow: hidden;
+}
+
+.vertical-nav-title span h1{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 45px;
+    font-weight: 700;
+    transform: translateY(50px);
+    transition: all 0.3s ease-in;
+}
+
+.options span b{
+    transition: all 0.3s ease-in;
+}

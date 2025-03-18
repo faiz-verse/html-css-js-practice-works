@@ -1,0 +1,364 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    font-size: 45px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: white 1px 1px 5px;
+
+    position: fixed;
+    z-index: 30;
+}
+
+#calculator {
+    width: 300px;
+    height: 475px;
+    padding: 20px;
+
+    position: fixed;
+    top: 17%;
+    z-index: 30;
+
+    border-radius: 30px;
+    border: solid darkslategray;
+    border-width: 0 0 10px 10px;
+
+    box-shadow: 0 0 10px white;
+
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile (Small Screens) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 35px;
+        top: 5%;
+    }
+
+    #calculator {
+        width: 265px;
+        height: 450px;
+        top: 20%;
+    }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+
+/* Small Laptop */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body {
+        font-size: 17px;
+        padding: 18px;
+    }
+}
+
+
+.answerField {
+    height: 120px;
+    width: 100%;
+    background-color: rgb(38, 38, 38);
+    border: 1px solid white;
+    border-radius: 10px 10px 0px 0px;
+    display: flex;
+    align-items: end;
+    /* Center content vertically */
+    justify-content: end;
+    box-sizing: border-box;
+}
+
+#answer {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: 35px;
+
+    color: white;
+    background-color: transparent;
+    font-family: monospace;
+    transition: font-size 0.3s ease;
+
+    text-shadow: 0 0 3px white;
+
+    overflow-x: auto;
+    /* Ensure scrollbar appears */
+
+
+    box-sizing: border-box;
+    /* Ensure padding doesn't mess with width */
+}
+
+::-webkit-scrollbar {
+    height: 7px;
+    /* Make the scrollbar thin */
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.300);
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.inputField {
+    margin-top: 10px;
+    height: 365px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3px;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 3px;
+}
+
+button {
+    align-items: center;
+    justify-items: center;
+
+    font-size: 18px;
+    font-weight: 550;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: rgb(90, 90, 90);
+    border-radius: 10px;
+    border: solid darkslategray;
+    border-width: 0 0 5px 5px;
+
+    transition: transform 0.3s ease-out;
+}
+
+.opr {
+    align-items: center;
+    justify-items: center;
+
+    font-size: 18px;
+    font-weight: 550;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    background-color: rgb(90, 90, 90);
+    border-radius: 10px;
+    background-color: rgb(60, 60, 60);
+    border-width: 0 0 5px 5px;
+
+    transition: transform 0.3s ease-out;
+}
+
+#equalsButton {
+    color: black;
+    background-color: rgb(100, 216, 255);
+
+    border: solid rgb(77, 174, 207);
+    border-width: 0 0 5px 5px;
+
+    transition: box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-out;
+}
+
+#equalsButton:hover {
+    box-shadow: 0 0 20px rgb(100, 216, 255);
+}
+
+#equalsButton:active {
+    transform: scale(0.98);
+    border-width: 0 0 0 0;
+}
+
+button:active {
+    transform: scale(0.98);
+    border-width: 0 0 0 0;
+}
+
+#allClear {
+    color: black;
+    background-color: rgb(255, 60, 60);
+
+    border: solid rgb(186, 69, 69);
+    border-width: 0 0 5px 5px;
+
+    transition: box-shadow 0.3s ease-in-out;
+    transition: transform 0.3s ease-out;
+}
+
+#allClear:hover {
+    box-shadow: 0 0 20px rgb(255, 60, 60);
+}
+
+#allClear:active {
+    transform: scale(0.98);
+    border-width: 0 0 0 0;
+}
+
+.backgroundContainer {
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+}
+
+.rotating-container {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: black;
+
+    position: relative;
+    z-index: 10;
+
+    filter: blur(5px);
+
+    animation: move-rotate 10s linear infinite;
+}
+
+@keyframes move-rotate {
+    from {
+        transform: translateX(-900px) translateY(-1200px) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(1600px) translateY(1200px) rotate(360deg);
+    }
+}
+
+#container1 {
+    width: 200px;
+    height: 200px;
+    margin-left: 20%;
+}
+
+#container2 {
+    margin-top: 5%;
+    width: 150px;
+    height: 150px;
+    margin-left: 50%;
+}
+
+#container3 {
+    margin-top: 5%;
+    width: 120px;
+    height: 120px;
+    margin-left: 10%;
+}
+
+#container4 {
+    margin-top: 10%;
+    width: 250px;
+    height: 250px;
+    margin-left: 60%;
+}
+
+#container5 {
+    margin-top: 5%;
+    width: 180px;
+    height: 180px;
+    margin-left: 20%;
+}
+
+#container6 {
+    margin-top: 5%;
+    width: 140px;
+    height: 140px;
+    margin-left: 40%;
+}
+
+
+/* second background */
+.backgroundContainer2 {
+    margin-top: -900px;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+}
+
+.rotating-container2 {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 60, 60);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    color: black;
+
+    position: relative;
+    z-index: 0;
+
+    filter: blur(6px);
+
+    animation: move-rotate-2 20s linear infinite;
+}
+
+@keyframes move-rotate-2 {
+    from {
+        transform: translateX(-1100px) translateY(-1200px) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(1800px) translateY(1200px) rotate(360deg);
+    }
+}
+
+#container2_1 {
+    width: 200px;
+    height: 200px;
+    margin-left: 40%;
+}
+
+#container2_2 {
+    margin-top: 10%;
+    width: 250px;
+    height: 250px;
+    margin-left: 10%;
+}
+
+#container2_3 {
+    margin-top: 5%;
+    width: 120px;
+    height: 120px;
+    margin-left: 80%;
+}
+
+#container2_4 {
+    margin-top: 10%;
+    width: 220px;
+    height: 220px;
+    margin-left: 10%;
+}
+
+#container2_5 {
+    margin-top: 5%;
+    width: 180px;
+    height: 180px;
+    margin-left: 60%;
+}
+
+#container2_6 {
+    margin-top: 5%;
+    width: 140px;
+    height: 140px;
+    margin-left: 20%;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+
+    <!-- icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+
+<body>
+    <h1>Timepass Calculator</h1>
+
+    <!-- background 1 -->
+    <div class="backgroundContainer">
+        <div class="rotating-container" id="container1">1</div>
+        <div class="rotating-container" id="container2">%</div>
+        <div class="rotating-container" id="container3">5</div>
+        <div class="rotating-container" id="container4">3</div>
+        <div class="rotating-container" id="container5">+</div>
+        <div class="rotating-container" id="container6">2</div>
+    </div>
+    <!-- background 2 -->
+    <div class="backgroundContainer2">
+        <div class="rotating-container2" id="container2_1">x</div>
+        <div class="rotating-container2" id="container2_2">7</div>
+        <div class="rotating-container2" id="container2_3">÷</div>
+        <div class="rotating-container2" id="container2_4">9</div>
+        <div class="rotating-container2" id="container2_5">^</div>
+        <div class="rotating-container2" id="container2_6">4</div>
+    </div>
+
+    <div id="calculator">
+
+        <!-- display -->
+        <div class="answerField">
+            <h2 id="answer">0</h2>
+        </div>
+
+        <!-- input buttons -->
+        <div class="inputField">
+            <button id="raiseTo">^</button>
+            <button id="percent">%</button>
+            <button id="allClear">AC</button>
+            <button class="opr" id="clear">
+                <span class="material-symbols-outlined">
+                    arrow_left_alt
+                </span>
+            </button>
+            <button id="_7">7</button>
+            <button id="_8">8</button>
+            <button id="_9">9</button>
+            <button class="opr" id="divide">÷</button>
+            <button id="_4">4</button>
+            <button id="_5">5</button>
+            <button id="_6">6</button>
+            <button class="opr" id="multiply">x</button>
+            <button id="_1">1</button>
+            <button id="_2">2</button>
+            <button id="_3">3</button>
+            <button class="opr" id="subtract">-</button>
+            <button id="dot">.</button>
+            <button id="_0">0</button>
+            <button id="equalsButton">=</button>
+            <button class="opr" id="add">+</button>
+        </div>
+
+    </div>
+
+    <script src="Calculator.js"></script>
+</body>
+
+</html>

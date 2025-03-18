@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draggable Element</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0f0f0;
+    }
+
+    .draggable {
+      width: 100px;
+      height: 100px;
+      background: #007bff;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      cursor: grab; /* Indicates that the element is draggable */
+      user-select: none; /* Prevents text selection while dragging */
+    }
+
+    .draggable:active {
+      cursor: grabbing; /* Changes cursor when dragging */
+    }
+  </style>
+</head>
+<body>
+
+<div class="draggable" id="dragElement">Drag Me</div>
+
+<script>
+  const dragElement = document.getElementById("dragElement");
+
+  let isDragging = false;
+  let offsetX = 0, offsetY = 0;
+
+  // Mouse down event
+  dragElement.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - dragElement.offsetLeft;
+    offsetY = e.clientY - dragElement.offsetTop;
+    dragElement.style.cursor = "grabbing";
+  });
+
+  // Mouse move event
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      dragElement.style.left = `${e.clientX - offsetX}px`;
+      dragElement.style.top = `${e.clientY - offsetY}px`;
+      dragElement.style.position = "absolute"; // Set position for dragging
+    }
+  });
+
+  // Mouse up event
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    dragElement.style.cursor = "grab";
+  });
+</script>
+
+</body>
+</html>

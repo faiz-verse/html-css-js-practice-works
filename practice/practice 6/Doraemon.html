@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye following cursor</title>
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .image-container {
+            height: 400px;
+            width: 400px;
+            background-image: url('/doremon.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+        }
+
+        .image-container .eye:nth-child(1) {
+            width: 62.5px;
+            height: 62.5px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 32.5%;
+            left: 27.5%;
+        }
+
+        .image-container .eye:nth-child(2) {
+            width: 60.5px;
+            height: 60.5px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 33.5%;
+            left: 48%;
+        }
+
+        .nose {
+            width: 25px;
+            height: 25px;
+            background-color: tomato;
+            border-radius: 50%;
+            position: absolute;
+            top: 41.8%;
+            left: 45%;
+            z-index: 2;
+        }
+
+        .image-container .eye:nth-child(1) .eye-ball {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10%;
+            left: 27.5%;
+        }
+
+        .image-container .eye:nth-child(2) .eye-ball {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10%;
+            left: 33.5%;
+        }
+
+        .dora-cake {
+            width: 150px;
+            height: 100px;
+            background-image: url('/doracake.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 3;
+            top: 20%;
+            transition: all 0.2s linear;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dora-cake">
+
+    </div>
+
+    <div class="image-container">
+        <div class="eye">
+            <div class="eye-ball"></div>
+        </div>
+        <div class="eye">
+            <div class="eye-ball"></div>
+        </div>
+        <div class="nose">
+
+        </div>
+    </div>
+
+
+    <script>
+        const eyes = document.querySelectorAll('.eye');
+        const cake = document.querySelector('.dora-cake');
+
+        document.addEventListener('mousemove', (e) => {
+
+            cake.style.top = `${e.clientY}px`;
+            cake.style.left = `${e.clientX}px`;
+
+            // Move the cake with the cursor
+            const cakeHalfWidth = cake.offsetWidth / 2;
+            const cakeHalfHeight = cake.offsetHeight / 2;
+            cake.style.left = `${e.clientX - cakeHalfWidth}px`;
+            cake.style.top = `${e.clientY - cakeHalfHeight}px`;
+
+            // Update eyes to follow the cake
+            const cakeRect = cake.getBoundingClientRect();
+            const cakeX = cakeRect.left + cakeRect.width / 2;
+            const cakeY = cakeRect.top + cakeRect.height / 2;
+
+            eyes.forEach(eye => {
+                const rect = eye.getBoundingClientRect();
+                const eyeX = rect.left + rect.width / 2; // Center x of the eye
+                const eyeY = rect.top + rect.height / 2; // Center y of the eye
+
+                // Calculate angle in radians
+                const angle = Math.atan2(cakeY - eyeY, cakeX - eyeX);
+
+                // Convert angle to degrees
+                const degree = (angle * 180) / Math.PI;
+
+                // Apply rotation to the eye
+                eye.style.transform = `rotate(${degree+60}deg)`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

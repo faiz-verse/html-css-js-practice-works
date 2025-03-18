@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: black;
+    color: white;
+
+    transition: all 0.5s ease;
+
+    width: 100%;
+    height: 100vh;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    position: relative;
+    bottom: 100px;
+    align-self: center;
+
+    transition: all 0.5s ease;
+    /* z-index: -1; */
+}
+
+h1::after {
+    content: "SIMPLE CARDS";
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    position: absolute;
+    inset: 0 0 0 0;
+    z-index: 2;
+
+    transition: all 0.5s ease;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    /* text-align: center; */
+    position: absolute;
+    align-self: center;
+    z-index: 1;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 300px;
+    margin-right: 2rem;
+    background: linear-gradient(red, blue);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease-in;
+
+}
+
+    .cardInfo {
+
+        width: 100%;
+        height: 300px;
+        padding: 2rem 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(transparent, black, black);
+        opacity: 0;
+        transform: translateY(60%);
+        transition: background 0.5s ease, opacity 0.7s ease-in, transform 0.7s ease-in;
+    }
+
+    .card:hover {
+        transform: translateY(30px)
+    }
+
+    .card:hover .cardInfo {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+
+.switchText {
+    align-self: center;
+    font-size: 50px;
+    font-family: "Square Peg", serif;
+    font-weight: 400;
+    font-style: normal;
+    position: relative;
+    top: 80px;
+    right: 50px;
+    transform: rotate(-20deg);
+    transition: color 0.5 ease;
+    /* margin-top: 60px; */
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 80px;
+    height: 30px;
+    padding: 3px;
+    background-color: black;
+    border: 2px solid white;
+    border-radius: 25px 25px 25px 25px;
+    position: relative;
+    top: 70px;
+    transition: background-color 0.5s ease;
+}
+
+.buttonText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: white;
+    margin: 8px;
+    position: absolute;
+    left: 3%;
+    transition: left 0.5s ease;
+}
+
+.buttonBall {
+    width: 35%;
+    height: 85%;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    left: 62%;
+    transition: left 0.5s ease;
+}
+
+.buttonBall:hover {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 480px){
+    h1{
+        font-size: 42px;
+    }
+    h1::after{
+        font-size: 42px;
+    }
+
+    .card{
+        width: 105px;
+        height: 150px;
+        margin-right: 1rem;
+        top: -75px;
+    }
+
+    .cardInfo {
+        height: 125px;
+        padding: 2rem 1rem;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(50%);
+        transition: background 0.5s ease, opacity 0.7s ease-in, transform 0.7s ease-in;
+    }
+    
+    .card:hover {
+        transform: translateY(25px)
+    }
+    
+    .card:hover .cardInfo {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    .switchText, .button{
+        visibility: hidden;
+    }
+    
+}
+
+@media screen and (min-width: 480px) and (max-width: 767px){
+    h1{
+        font-size: 52px;
+
+    }
+    h1::after{
+        font-size: 52px;
+
+    }
+    .card{
+        width: 135px;
+        height: 180px;
+        margin-right: 1.5rem;
+        top: -60px;
+    }
+
+    .cardInfo {
+        height: 125px;
+        padding: 2rem 1rem;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(50%);
+        transition: background 0.5s ease, opacity 0.7s ease-in, transform 0.7s ease-in;
+    }
+    
+    .card:hover {
+        transform: translateY(25px)
+    }
+    
+    .card:hover .cardInfo {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    .switchText, .button{
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px){
+    h1{
+        font-size: 72px;
+
+    }
+    h1::after{
+        font-size: 72px;
+
+    }
+
+    .card{
+        width: 150px;
+        height: 200px;
+        margin-right: 1rem;
+        top: -50px;
+    }
+
+    .cardInfo {
+        height: 125px;
+        padding: 2rem 1rem;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(50%);
+        transition: background 0.5s ease, opacity 0.7s ease-in, transform 0.7s ease-in;
+    }
+    
+    .card:hover {
+        transform: translateY(25px)
+    }
+    
+    .card:hover .cardInfo {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+
+    .switchText, .button{
+        visibility: hidden;
+    }
+}
