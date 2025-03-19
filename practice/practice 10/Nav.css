@@ -5,13 +5,12 @@ body{
     margin: 0;
     width: 100%;
     height: 100vh;
-    background-color: transparent;
     /* background-image: url('/Animation - 1735290426314.gif');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; */
-    /* background: linear-gradient(to top right, darkblue, #000055, black, black);
-    background-size: 400% 400%; /* Creates room for smooth gradient movement */
+    background: linear-gradient(to top right, darkblue, #000055, black, black);
+    /* background-size: 400% 400%; /* Creates room for smooth gradient movement */
     /* animation: changeGradient 5s ease infinite; */
 }
 
@@ -29,7 +28,7 @@ body{
 } */
 
 /* For Video Background */
-video{
+/* video{
     object-fit: cover;
     position: absolute;
     width: 100%;
@@ -37,7 +36,7 @@ video{
     top: 0%;
     left: 0%;
     z-index: -10;
-}
+} */
 
 /* ---------------------------------------- NAVIGATION BAR ---------------------------------------- */
 nav{
