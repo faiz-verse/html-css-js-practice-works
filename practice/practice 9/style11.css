@@ -31,7 +31,7 @@ body {
     display: flex;
     justify-content: center;
     box-shadow: 0 0 10px black;
-    background-image: url('/golden chinese pattern circle.png');
+    background-image: url('golden chinese pattern circle.png');
     background-size: 190px;
     background-position: center;
     background-repeat: no-repeat;
@@ -171,12 +171,12 @@ body {
 /* For Custom Font using TTF file */
 @font-face {
     font-family: custom-Karate-font;
-    src: url('/CustomFonts/Karate.ttf');
+    src: url('CustomFonts/Karate.ttf');
 }
 
 @font-face {
     font-family: custom-GangOfThree-font;
-    src: url('/CustomFonts/go3v2.ttf');
+    src: url('CustomFonts/go3v2.ttf');
 }
 
 h1 {
@@ -273,7 +273,7 @@ li {
     position: absolute;
     z-index: -1;
     top: -2%;
-    background-image: url('/chinese pattern line.png');
+    background-image: url('chinese pattern line.png');
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
@@ -285,7 +285,7 @@ li {
     position: absolute;
     z-index: -1;
     bottom: -2%;
-    background-image: url('/chinese pattern line.png');
+    background-image: url('chinese pattern line.png');
     background-size: contain;
     background-repeat: repeat;
     background-position: center;
