@@ -1,0 +1,76 @@
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-container{
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background: beige;
+    border-radius: 10px;
+    font-family: cursive;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cell-container {
+    width: 300px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+/* Remove outer borders */
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+    border-left: none;
+}
+
+.cell:nth-child(3n) {
+    border-right: none;
+}
+
+.cell:nth-last-child(-n + 3) {
+    border-bottom: none;
+}
+
+#restart-button{
+    border: none;
+    width: 180px;
+    height: 40px;
+    font-size: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 550;
+    border-radius: 50px;
+    background: transparent;
+    color: black;
+    border: 3px solid black;
+    transition: all 0.1s ease-in-out;
+}
+
+#restart-button:active{
+    color: white;
+    background: black;
+}
