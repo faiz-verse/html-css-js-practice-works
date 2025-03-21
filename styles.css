@@ -9,11 +9,19 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    overflow: hidden;
+
 }
 
 h1 {
-    text-wrap-style: pretty;
     font-family: "Lexend", sans-serif;
+    text-align: center;
+}
+
+h3 {
+    font-family: "Lexend", sans-serif;
+    text-align: center;
 }
 
 #work-container {
@@ -31,7 +39,7 @@ a {
     text-decoration: none;
 
     display: block;
-    width: 250px;
+    width: 275px;
     height: 50px;
     background: beige;
     border-radius: 10px;
@@ -74,8 +82,18 @@ span {
 
 
 @media screen and (max-width: 480px) {
+
+    body {
+        padding-bottom: 10px;
+        overflow: auto;
+    }
+
     h1 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 10px;
     }
 
     a {
@@ -89,8 +107,18 @@ span {
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+
+    body {
+        padding-bottom: 10px;
+        overflow: auto;
+    }
+
     h1 {
-        font-size: 24px;
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 14px;
     }
 
     a {
