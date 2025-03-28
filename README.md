@@ -1,9 +1,14 @@
-# HTML, CSS, JS Practice works
+# HTML, CSS & JavaScript Practice Works  
 
-These are my **html,css & js** practice works that are inside the **practice folder** <br>
-I did these practices along ago so they are **beginner level timepass** works 😆 <br>
-Most of them are not responsive as they are done only for practice so **suggested to open via Desktop 💻😅** <br>
+This repository contains my **HTML, CSS, and JavaScript** practice projects, all stored inside the **practice folder**.  
+These were created a while ago, so they are mostly **beginner-level experiments**—just some fun practice! 😆  
 
-#Visit the works from the links below: <br>
-**Main link:** 🔗 https://html-css-js-practice-works.onrender.com
+## ⚠️ Note  
+- Most of these projects **aren't responsive**, as they were made purely for practice.  
+- **Recommended:** Open them on a **desktop** 💻 for the best experience.  
 
+## 🔗 Live Preview  
+Check out the projects here:  
+[➡ HTML, CSS & JS Practice Works](https://html-css-js-practice-works.onrender.com)  
+
+Feel free to explore, and let me know what you think! 🚀
